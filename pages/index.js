@@ -18,10 +18,17 @@
 
 import axios from "axios";
 
-const Index = () => <h1>Index Page</h1>;
+const Index = ({ posts }) => {
+  console.log(posts);
+  return (
+    <div>
+      <h1>Index Page</h1>
+    </div>
+  );
+};
 Index.getInitialProps = async () => {
   const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
   const { data } = res;
-  console.log(data[0]);
+  return { posts: data };
 };
 export default Index;
