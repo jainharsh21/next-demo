@@ -20,7 +20,6 @@ import axios from "axios";
 import Link from "next/link";
 
 const Index = ({ posts }) => {
-  console.log(posts);
   return (
     <div>
       <h1>Index Page</h1>
