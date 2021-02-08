@@ -7,6 +7,10 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
+  server.get("/p/:id", (req, res) => {
+    app.render(req, res, "/post", req.params);
+  });
+
   server.get("*", (req, res) => {
     return handle(req, res);
   });
